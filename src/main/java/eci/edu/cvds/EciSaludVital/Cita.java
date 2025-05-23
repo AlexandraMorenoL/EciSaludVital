@@ -1,7 +1,18 @@
 package eci.edu.cvds.EciSaludVital.model;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDate;
 
-public class Cita{
+/**
+ * Representa una cita médica que se almacenará en MongoDB.
+ */
+@Document(collection = "citas")
+public class Cita {
+
+    @Id
+    private String id;
+
     private String nombreCompleto;
     private String cedula;
     private String correo;
@@ -9,70 +20,78 @@ public class Cita{
     private String especialidad;
     private String doctor;
     private String ubicacion;
-    private String estado; //Ya sea confirmada, rechazada, cancelada
+    private String estado;
 
-}
+    // Constructores
+    public Cita() {}
 
-public String getNombreCompleto(){
-    return nombreCompleto;
-}
+    // Getters y setters
 
-public void setNombreCompleto(String nombreCompleto){
-    this.nombreCompleto= nombreCompleto;
-}
+    public String getId() {
+        return id;
+    }
 
-public String getCedula(){
-    return cedula;
-}
+    public String getNombreCompleto() {
+        return nombreCompleto;
+    }
 
-public void setCedula(String cedula){
-    this.cedula= cedula;
-}
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
+    }
 
-public String getCorreo(){
-    return correo;
-}
+    public String getCedula() {
+        return cedula;
+    }
 
-public void setCorreo(String correo){
-    this.correo= correo;
-}
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
 
-public String getFecha(){
-    return nombreCompleto;
-}
+    public String getCorreo() {
+        return correo;
+    }
 
-public void setFecha(String fecha){
-    this.fecha= fecha;
-}
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
 
-public String getEspecialidad(){
-    return especialidad;
-}
+    public LocalDate getFecha() {
+        return fecha;
+    }
 
-public void setEspecialidad(String especialidad){
-    this.especialidad= especialidad;
-}
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
 
-public String getDoctor(){
-    return doctor;
-}
+    public String getEspecialidad() {
+        return especialidad;
+    }
 
-public void setDoctor(String doctor){
-    this.doctor= doctor;
-}
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
+    }
 
-public String getUbicacion(){
-    return ubicacion;
-}
+    public String getDoctor() {
+        return doctor;
+    }
 
-public void setUbicacion(String ubicacion){
-    this.ubicacion= ubicacion;
-}
-public String getEstado(){
-    return estado;
-}
+    public void setDoctor(String doctor) {
+        this.doctor = doctor;
+    }
 
-public void setEstado(String doctor){
-    this.estado= estado;
-}
+    public String getUbicacion() {
+        return ubicacion;
+    }
 
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+}
