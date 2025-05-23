@@ -19,19 +19,46 @@ public Especialidad(String nombre, String descricion, String imagen, String doct
     this.doctor=doctor;
     this.ubicacion=ubicacion
 }
+
 public String getNombre(){
     return nombre;
 }
 
-public
+public void setNombre(String nombre){
+    this.nombre=nombre;
+}
 
+public String getDescripcion(){
+    return descripcion;
+}
 
+public void setDescripcion(String descricion){
+    this.descripcion= descricion;
+}
 
+public String getImagen(){
+    return imagen;
+}
 
+public void setImagen(String imagen){
+    this.imagen= imagen;
+}
 
+public String getDoctor(){
+    return doctor;
+}
 
+public void setDoctor(String doctor){
+    this.doctor= doctor;
+}
 
+public String getUbicacion(){
+    return ubicacion;
+}
 
+public void setUbicacion(String ubicacion){
+    this.ubicacion= ubicacion;
+}
 
 
 
